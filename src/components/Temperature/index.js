@@ -39,7 +39,6 @@ const Temperature = () => {
                         </div>
                     </CircularProgressbarWithChildren>  
                 </div>
-
             </div>
         </div>
     )
