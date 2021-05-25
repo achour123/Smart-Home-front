@@ -1,0 +1,115 @@
+.camera{
+    i {
+        font-size: 1.4rem;
+        padding: 0 .35rem;
+        color: $color-5;
+        text-shadow: 0 0px 1px $color-1;
+        display: flex;
+        justify-content: center;
+        @include verticalCenter;
+      }
+    h3 {
+        text-align: center;
+        grid-area: 2;
+        font-family: $font-2;
+        font-size: 1.65rem;
+        @include verticalCenter;
+        }
+    .cam {
+        grid-area: 4;
+        color: $color-4;
+        cursor: pointer;
+        font-size: 1.5rem;
+        @include verticalCenter;
+        transition: .2s;
+      
+        &:hover {
+          transform: scale(1.1);
+        }
+    }
+    .showCamera {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.507);
+        animation: popup .3s ease forwards ;
+        transform-origin: center;
+  
+        .cameraContent {
+          position: relative;
+          top: 25%;
+          width: 600px;
+          margin: 0 auto;
+          color: $color-5;
+          background: $color-1;
+          border-radius: $borderRadius;
+          padding: 2rem;
+          box-shadow: 0 10px 10px #333;
+          animation: popup .6s ease forwards;
+          transform: scale(0);
+          transform-origin: center;
+  
+          @keyframes popup {
+            to {
+              transform: scale(1);
+            } 
+          }
+        }
+        .head {
+          display: flex;
+          justify-content: space-around;
+          margin: 1rem 0;
+        }
+        h2 {
+          text-align: left;
+          margin-bottom: 1rem;
+        }
+        .button {
+          cursor: pointer;
+          color: $color-1;
+          background: $color-5;
+          border-radius: $borderRadius;
+          padding: 1rem;
+          transition: .2s;
+  
+          &:hover {
+            background: $color-4;
+          }
+        }
+        .text {
+          text-align: justify;
+          padding-bottom: 1rem;
+        }
+        .return {
+          margin: 1rem auto;
+          width: 200px;
+        }
+    }
+    @media (max-width: 650px) and (min-width: 521px){
+        .knowledgesContent {
+          .camera {
+            width: 49% !important;
+      
+            i {
+              font-size: 1rem;
+            }
+          }
+          .cameraContent {
+            width: 100% !important;
+          }
+        }
+      }
+      @media (max-width: 520px){
+        
+        .knowledgesContent {
+          grid-template-rows: 1fr !important;
+      
+          .camera {
+            grid-template-rows: 30px 40px 80px 40px !important;
+            width: 98% !important;
+          }
+        }
+    }
+}

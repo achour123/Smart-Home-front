@@ -18,12 +18,14 @@ const Logout = () => {
 
     const handleChange = event => {
         setChecked(event.target.checked);
+        // props.history.push('/');
     }
 
     return (
         <div className="logoutContainer">
             <label className="switch">
                 <input 
+                    // onClick={()=>firebase.auth().signOut()}
                     onChange={handleChange}
                     type="checkbox"
                     checked={checked}

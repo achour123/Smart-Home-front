@@ -30,7 +30,7 @@ const Welcome = props => {
                     <h1>Smart_home device</h1>
                     <h2>Smart home, quand rien d'autre ne fait l'affaire</h2>
                     <div className='pdf'>
-                        <a href='./media/CV.pdf' target='_blank'>Telecharger Votre Contrat</a>
+                        <a href='./media/contrat.pdf' target='_blank'>Telecharger Votre Contrat</a>
                     </div>
                 </div>
             </div>

@@ -34,7 +34,6 @@ const ForgetPassword = props => {
                 <div className="col-md-6 d-none d-md-flex bg-image"></div>
                 <div className="col-md-6 bg-light">
                     <div className="forget d-flex align-items-center py-5">
-
                         <div className='container'>
                             <div className='row'>
                                 <div className='col-lg-10 col-xl-7 mx-auto'>

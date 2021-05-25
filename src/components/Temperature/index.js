@@ -1,9 +1,46 @@
-import React from 'react'
+import React, { useState, useEffect, Headers } from 'react'
+import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
 const Temperature = () => {
+    const [currenthumidty, setCurrenthumidty] = useState(0);
+    const [currenttemp, settemp] = useState(0);
+    useEffect(() => {
+        fetch('http://169.254.111.226:5000/sensors').then(res => res.json()).then(data => {
+            setCurrenthumidty(data.humiduty);
+            settemp(data.temperature);
+            console.log(data)
+
+
+
+        });
+    }, []);
     return (
-        <div className='temperature'>
-            <h3 style={{textAlign:'center'}}>Temperature</h3>
+        <div>
+            <div className='temperature'>
+                <h3 style={{ textAlign: 'center' }}>humudité</h3>
+                <span style={{ textAlign: 'center' }}>Récuperation de l'humidité ambinante</span>
+                <div style={{ width: '147px', height: '147px', marginLeft: 'auto', marginRight: 'auto' }}>
+                    <CircularProgressbarWithChildren value={69} >
+                        <div style={{ fontSize: 24, marginTop: -5 }}>
+                            <strong>{69}<i class="fas fa-tint"></i></strong>
+                        </div>
+                    </CircularProgressbarWithChildren>
+                </div>
+            </div>
+
+            <div className='temperature'>
+                <h3 style={{ textAlign: 'center' }}>Temperature</h3>
+                <span style={{ textAlign: 'center' }}>Récuperation de l'humidité ambinante</span>
+                <div style={{ width: '147px', height: '147px', marginLeft: 'auto', marginRight: 'auto', }}>
+                    <CircularProgressbarWithChildren value={currenttemp} >
+                        <div style={{ fontSize: 24, marginTop: -5 }}>
+                            <strong>{currenttemp} <i class="fas fa-thermometer-three-quarters"></i> </strong>
+                        </div>
+                    </CircularProgressbarWithChildren>  
+                </div>
+
+            </div>
         </div>
     )
 }
