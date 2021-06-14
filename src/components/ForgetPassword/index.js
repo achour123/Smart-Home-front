@@ -31,7 +31,7 @@ const ForgetPassword = props => {
     return (
         <div className="container-fluid">
             <div className="row no-gutter">
-                <div className="col-md-6 d-none d-md-flex bg-image"></div>
+                <div className="col-md-6 d-none d-md-flex bg-image" style={{backgroundImage: `url("https://cdn.pixabay.com/photo/2019/04/25/04/35/smart-home-4153906_1280.jpg" )`,backgroundSize:'cover',backgroundPosition:'center center',  minHeight:'100vh'}}></div>
                 <div className="col-md-6 bg-light">
                     <div className="forget d-flex align-items-center py-5">
                         <div className='container'>
@@ -64,7 +64,6 @@ const ForgetPassword = props => {
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
